@@ -1,0 +1,3 @@
+adb shell am start com.android.settings/com.android.settings.Settings（包名）打开指定包名
+adb shell pm list packges 列出所有包名
+adb logcat -v threadtime > log.txt         获取logcat日志到当前目录
