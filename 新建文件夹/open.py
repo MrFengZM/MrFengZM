@@ -49,3 +49,4 @@ def  test_open_jia():
 
 
 
+file=open('sql.sql','r')
