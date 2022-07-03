@@ -1,1 +1,1 @@
-select * from glucose where
+selectfrom where order by limit
