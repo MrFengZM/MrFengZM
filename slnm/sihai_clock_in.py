@@ -6,9 +6,7 @@ import datetime
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 
-
-
-class SiHai():
+class SiHai(object):
 
     def __init__(self,phone=None,password=None):
         self.__driver=webdriver.Chrome()
@@ -37,7 +35,6 @@ class SiHai():
         time.sleep(2)
         self.driver.find_element(by.By.XPATH,'// *[ @ id = "TANGRAM__PSP_11__submit"]').click()
 
-
     def sihai_sign(self):
         self.sihai_login()
         time.sleep(5)
@@ -63,10 +60,10 @@ if __name__ == "__main__":
     while True:
         time.sleep(60)
         print(SiHai.now_time())
-        if sh.now_time()>400 and sh.now_time()<430:
+        if sh.now_time() > 400 and sh.now_time() < 430:
             sh.run()
             time.sleep(2000)
-        elif sh.now_time()>730 and sh.now_time()<800:
+        elif sh.now_time()>1930 and sh.now_time()<2000:
             sh.run()
             time.sleep(2000)
 
