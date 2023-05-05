@@ -1,6 +1,6 @@
 import requests,pytest
 import json
-
+import pymouse
 class Test_port:
 
     @staticmethod
@@ -22,7 +22,9 @@ class Test_port:
         data = {"tag":{"id":134,"name":"广东人"}}
         rep=requests.post(url=url,json=data)
         print(rep)
-
+    def test_mouse(self):
+        mouse = pymouse.PyMouse()
+        mouse.move(22,33)
 
 if __name__ == "__main__":
    pytest.main("-vs")
