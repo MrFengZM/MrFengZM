@@ -15,6 +15,6 @@ def weixin():
         time.sleep(1)
 if __name__ =="__main__":
     wenxin_process=multiprocessing.Process(target=weixin)
-    dingding_process=multiprocessing.Process(target=dingding,kwargs={"nuber":4})
+    dingding_process=multiprocessing.Process(target=dingding,kwargs={"nuber":5})
     wenxin_process.start()
     dingding_process.start()
