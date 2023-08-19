@@ -74,9 +74,9 @@ class SiHai(object):
         self.driver.get("https://sihai.baidu.com/sign-in")
         # self.driver.refresh()
         # time.sleep(1)
-        self.driver.find_element(by.By.XPATH,'//*[@id="app"]/section/section/div[1]/section[1]').click()
+        self.driver.find_element(by.By.XPATH,'//*[@id="app"]/section/section/div[1]/section[1]').click() # 调试用
         time.sleep(1)
-        # self.driver.find_element(by.By.XPATH, '// *[ @ id = "app"] / section / section / div[3] / div / img').click()
+        # self.driver.find_element(by.By.XPATH, '// *[ @ id = "app"] / section / section / div[3] / div / img').click() # 打卡
         print("打卡成功")
         time.sleep(1)
 
@@ -132,7 +132,7 @@ class Run:
                 sh.driver.find_element(by.By.XPATH,'//*[@id="TANGRAM__PSP_11__password"]').send_keys(sh.password)
                 time.sleep(1)
                 sh.driver.find_element(by.By.XPATH,'// *[ @ id = "TANGRAM__PSP_11__submit"]').click()
-                time.sleep(3)
+                time.sleep(1000)
 
                 sh.sihai_sign()
             except Exception as error_log:
@@ -147,9 +147,10 @@ class Run:
 if __name__ == "__main__":
     while True:
         print(SiHai.now_time())
-        if (SiHai.now_time() > 100 and SiHai.now_time() < 430)\
+        if (SiHai.now_time() > 400 and SiHai.now_time() < 830)\
                 or (SiHai.now_time() > 1930 and SiHai.now_time() < 2000):
             _thread.start_new_thread(Run.run,("17620039144","812812fzm"))
             # _thread.start_new_thread(Run.run, ("15836285767", "021120hyd"))
             time.sleep(3600*7)
         time.sleep(300)
+    os.startfile("C:\\Users\\冯智明\\Desktop\\四海平台.url")
