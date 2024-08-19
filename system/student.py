@@ -70,7 +70,7 @@ def insert():
             student = {"id":id,"name":name,"python":python,"java":java,"英语":english}  # 学生信息
             student_list.append(student)  # 存入列表
             result = input("是否继续输入（y/n）")
-            if result is "y" :continue
+            if result == "y" :continue
             else:break
 
     save(student_list)

@@ -50,3 +50,20 @@ def test_chdir():
     print(os.getcwd())
     test_rmdir()
 
+def test_chdir():
+    PLATFORM_NAME = 'platform_name'
+
+    desired_caps = {
+        ('%s' % PLATFORM_NAME): 'Android',  # 被测手机是安卓
+        'platform_version': '9',  # 手机安卓版本
+        'device_name': 'android666',  # 设备名，安卓手机可以随意填写
+        'app_package': 'com.alibaba.wireless',  # 启动APP Package名称
+        'app_activity': 'launch.LauncherActivity',  # 启动Activity名称
+        # 'unicodeKeyboard': True,  # 使用自带输入法，输入中文时填True
+        'reset_keyboard': True,  # 执行完程序恢复原来输入法
+        'no_reset': True,  # 不要重置App，如果为False的话，执行完脚本后，app的数据会清空，比如你原本登录了，执行完脚本后就退出登录了
+        'new_command_timeout': 6000,
+        'automation_name': 'UiAutomator2',
+        "skip_server_installation": True
+    }
+    print(desired_caps)
