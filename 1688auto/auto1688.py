@@ -57,6 +57,7 @@ class Auto_1688(threading.Thread):
             'automationName': self.automationName,
             "skipServerInstallation": self.skipServerInstallation
         }
+
         self.driver = webdriver.Remote(f'http://localhost:{self.port}/wd/hub', self.desired_caps)
         time.sleep(3)
 
@@ -257,6 +258,7 @@ class Auto_1688(threading.Thread):
 def main(commodity, port="4723", version="9", name='android666'):
     dv = Auto_1688('Android', f'{version}', f'{name}', 'com.alibaba.wireless', 'launch.LauncherActivity', 6000,
                    port=port)
+    print('{} is running success >> {}'.format(threading.current_thread().name,datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
     """点击搜索框"""
     for i in range(3):
